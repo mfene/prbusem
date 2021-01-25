@@ -5,6 +5,9 @@ import { Archiver, create as archiver } from 'archiver';
 @Injectable()
 export class AppService {
   deflate(files: UppedFile[], attachments: string): Archiver {
+    if (files == null || files.length === 0) {
+      throw new BadRequestException('At least one file must be given');
+    }
     const zip = archiver('zip');
     const attArray = attachments != null ? attachments.split(';') : [];
     console.log(files.length);
