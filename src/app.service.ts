@@ -6,7 +6,7 @@ import { Archiver, create as archiver } from 'archiver';
 export class AppService {
   deflate(files: UppedFile[], attachments: string): Archiver {
     const zip = archiver('zip');
-    const attArray = attachments.split(';');
+    const attArray = attachments != null ? attachments.split(';') : [];
     console.log(files.length);
     for (const file of files) {
       const name =
