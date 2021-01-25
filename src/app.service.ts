@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { UppedFile } from './models/upped-file';
 import { Archiver, create as archiver } from 'archiver';
 
